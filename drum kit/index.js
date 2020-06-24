@@ -1,6 +1,7 @@
 
 document.addEventListener("keypress", function(event){
  makeSound(event.key);
+ buttonAnimation(event.key);
 });
 
 for(i=0;i<=document.querySelectorAll("button").length;i++){
@@ -8,6 +9,7 @@ document.querySelectorAll("button")[i].addEventListener("click",function(){
     //this.style.color="white";//this triggers all the button objects here or triggers the event
     var buttonInnerHTML = this.innerHTML;
     makeSound(buttonInnerHTML);
+    buttonAnimation(buttonInnerHTML);
 });
 }
 function makeSound(key){
@@ -42,4 +44,11 @@ function makeSound(key){
           break;
           default: console.log(buttonInnerHTML);
       }
+}
+function buttonAnimation(currentKey){
+ var activeButton = document.querySelector("." + currentKey);
+ activeButton.classList.add("pressed");
+ setTimeout(() => {
+     activeButton.classList.remove("pressed");
+ }, 100);
 }
