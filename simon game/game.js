@@ -1,7 +1,7 @@
 
 var buttonColours = ["red","blue","green","yellow"];//values of the button stored
 var gamePattern = [];//keep game clicked pattern array empty
-var userPattern = [];//user clicked pattern array empty
+var userPattern = [];//user clicked pattern empty array
 var level = 0;//initial level is 0
 var started = false;//start to false
 $(document).keypress(function() {//restart the game or start the game
